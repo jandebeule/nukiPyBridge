@@ -34,6 +34,7 @@ nuki.authenticateUser(myPublicKeyHex, myPrivateKeyHex, myID, myIDType, myName)
 ```
 
 **REMARK 1** The credentials are stored in the file (hard-coded for the moment in nuki.py) : /home/pi/nuki/nuki.cfg
+
 **REMARK 2** Authenticating is only possible if the lock is in 'pairing mode'. You can set it to this mode by pressing the button on the lock for 5 seconds until the complete LED ring starts to shine.
 
 ### Commands for Nuki
