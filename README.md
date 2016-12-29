@@ -41,6 +41,8 @@ nuki.authenticateUser(myPublicKeyHex, myPrivateKeyHex, myID, myIDType, myName)
 
 **REMARK 2** Authenticating is only possible if the lock is in 'pairing mode'. You can set it to this mode by pressing the button on the lock for 5 seconds until the complete LED ring starts to shine.
 
+**REMARK 3** You can find out your Nuki's MAC address by using 'hcitool lescan' for example.
+
 ### Commands for Nuki
 Once you are authenticated (and the nuki.cfg file is created on your system), you can use the library to send command to your Nuki lock:
 ```python
