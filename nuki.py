@@ -52,14 +52,19 @@ class Nuki():
 		blescan.hci_enable_le_scan(sock)
 		returnedList = blescan.parse_events(sock, 10)
 		newStateAvailable = -1
+		print "isNewNukiStateAvailable() -> search through %d received beacons..." % len(returnedList)
 		for beacon in returnedList:
 			beaconElements = beacon.split(',')
 			if beaconElements[0] == self.macAddress and beaconElements[1] == "a92ee200550111e4916c0800200c9a66":
+				print "Nuki beacon found, new state element: %s" % beaconElements[4]
 				if beaconElements[4] == '-60':
 					newStateAvailable = 0
 				else:
 					newStateAvailable = 1
 				break
+			else:
+				print "non-Nuki beacon found: mac=%s, signature=%s" % (beaconElements[0],beaconElements[1])
+		print "isNewNukiStateAvailable() -> result=%d" % newStateAvailable
 		return newStateAvailable
 	
 	# private method to handle responses coming back from the Nuki Lock over the BLE connection
