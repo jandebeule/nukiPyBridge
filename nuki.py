@@ -13,14 +13,14 @@ import bluetooth._bluetooth as bluez
 class Nuki():	
 	# creates BLE connection with NUKI
 	#	-macAddress: bluetooth mac-address of your Nuki Lock
-	def __init__(self, macAddress):	
+	def __init__(self, macAddress, cfg='/home/pi/nuki/nuki.cfg'):	
 		self._charWriteResponse = ""
 		self.parser = nuki_messages.NukiCommandParser()
 		self.crcCalculator = CrcCalculator()
 		self.byteSwapper = ByteSwapper()
 		self.macAddress = macAddress
 		self.config = ConfigParser.RawConfigParser()
-		self.config.read('/home/pi/nuki/nuki.cfg')
+		self.config.read(cfg)
 		self.device = None
 	
 	def _makeBLEConnection(self):
