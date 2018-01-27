@@ -55,7 +55,7 @@ class Nuki():
 		print "isNewNukiStateAvailable() -> search through %d received beacons..." % len(returnedList)
 		for beacon in returnedList:
 			beaconElements = beacon.split(',')
-			if beaconElements[0] == self.macAddress and beaconElements[1] == "a92ee200550111e4916c0800200c9a66":
+			if beaconElements[0] == self.macAddress.lower() and beaconElements[1] == "a92ee200550111e4916c0800200c9a66":
 				print "Nuki beacon found, new state element: %s" % beaconElements[4]
 				if beaconElements[4] == '-60':
 					newStateAvailable = 0
