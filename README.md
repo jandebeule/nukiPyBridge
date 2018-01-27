@@ -62,4 +62,10 @@ available = nuki.isNewNukiStateAvailable()
 print "New state available: %d" % available
 
 ```
-**REMARK** the method ```isNewNukiStateAvailable()``` only works if you run your python script as root (sudo). All the other methods do not require root privileges
+**REMARK** the method ```isNewNukiStateAvailable()``` only works if you run your python script as root (sudo) or if you allow some capabilites. See below. All the other methods do not require root privileges
+
+### isNewNukiStateAvailable() without root
+If you want to run isNewNukiStateAvailable() without root, allow python to use the cap_net_raw+eip capability:
+```bash
+ sudo setcap cap_net_raw+eip $(eval readlink -f `which python`)
+ ```
