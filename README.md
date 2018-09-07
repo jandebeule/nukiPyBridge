@@ -4,7 +4,7 @@ This python library let's you talk with Nuki lock (https://nuki.io/en/)
 
 ## Get started
 1. install a BLE-compatible USB dongle (or use the built-in bluetooth stack if available)
-2. sudo apt-get install libffi-dev
+2. sudo apt-get install libffi-dev libbluetooth-dev
 3. install bluez (https://learn.adafruit.com/install-bluez-on-the-raspberry-pi/installation)
 4. install pygatt (pip install pygatt)
 5. replace the /usr/local/lib/python2.7/dist-packages/pygatt/backends/gatttool/gatttool.py file with the file from this repository.
@@ -42,6 +42,8 @@ nuki.authenticateUser(myPublicKeyHex, myPrivateKeyHex, myID, myIDType, myName)
 **REMARK 2** Authenticating is only possible if the lock is in 'pairing mode'. You can set it to this mode by pressing the button on the lock for 5 seconds until the complete LED ring starts to shine.
 
 **REMARK 3** You can find out your Nuki's MAC address by using 'hcitool lescan' for example.
+
+**REMARK 4** The device needs to be initialized once (i.e. using the Nuki app on your cell phone) before it can be controlled with this library.
 
 ### Commands for Nuki
 Once you are authenticated (and the nuki.cfg file is created on your system), you can use the library to send command to your Nuki lock:
