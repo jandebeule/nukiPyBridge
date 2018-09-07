@@ -43,6 +43,8 @@ nuki.authenticateUser(myPublicKeyHex, myPrivateKeyHex, myID, myIDType, myName)
 
 **REMARK 3** You can find out your Nuki's MAC address by using 'hcitool lescan' for example.
 
+**REMARK 4** The device needs to be initialized once (i.e. using the Nuki app on your cell phone) before it can be controlled with this library.
+
 ### Commands for Nuki
 Once you are authenticated (and the nuki.cfg file is created on your system), you can use the library to send command to your Nuki lock:
 ```python
