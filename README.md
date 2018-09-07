@@ -4,7 +4,7 @@ This python library let's you talk with Nuki lock (https://nuki.io/en/)
 
 ## Get started
 1. install a BLE-compatible USB dongle (or use the built-in bluetooth stack if available)
-2. sudo apt-get install libffi-dev
+2. sudo apt-get install libffi-dev libbluetooth-dev
 3. install bluez (https://learn.adafruit.com/install-bluez-on-the-raspberry-pi/installation)
 4. install pygatt (pip install pygatt)
 5. replace the /usr/local/lib/python2.7/dist-packages/pygatt/backends/gatttool/gatttool.py file with the file from this repository.
