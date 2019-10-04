@@ -7,6 +7,7 @@ from nacl.public import PrivateKey, Box
 from nacl.bindings.crypto_box import crypto_box_beforenm
 import hmac
 import hashlib
+import sys
 
 class Nuki_EncryptedCommand(object):
 	def __init__(self, authID='', nukiCommand=None, nonce='', publicKey='', privateKey=''):
